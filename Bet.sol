@@ -71,7 +71,7 @@ contract Bet {
     // Method to choose the winning option and share the rewards
     function withdraw(uint _winningOption) public payable {
         require(owner==msg.sender, "The bet can be solved only by owner");
-        if (block.timestamp < solveTime) { // FOR TESTS ONLY, good condition: block.timestamp > solveTime
+        if (block.timestamp > solveTime) {
 
             if(fee!=0){
                 uint creatorFee = (rewardPool.mul(fee)).div(100);
