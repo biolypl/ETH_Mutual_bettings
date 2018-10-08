@@ -1,7 +1,7 @@
 pragma solidity ^0.4.0;
-import "https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-solidity/master/contracts/math/SafeMath.sol";
+//import "https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-solidity/master/contracts/math/SafeMath.sol";
 
-//import "./node_modules/openzeppelin-solidity/contracts/math/SafeMath.sol";
+import "./node_modules/openzeppelin-solidity/contracts/math/SafeMath.sol";
 // Contract for mutual bettings
 contract Bet {
     using SafeMath for uint;
