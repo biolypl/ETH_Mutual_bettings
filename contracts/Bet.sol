@@ -92,8 +92,11 @@ contract Bet {
 
     }
 
-    function getCourse(uint _option) public view returns(uint) {
+    function getCourse(uint _option, uint _amountToBet) public view returns(uint) {
         require(_option < options.length, "No such option!"); // Option ID has to exist
-        return (rewardPool.mul(100).div(options[_option].pool));
+        //convert from _amountToBet - ETH  to Wei, for now consider _amountToBet as Wei
+        uint tmpRewardPool = rewardPool + _amountToBet;
+        uint tmpOption = options[_option].pool.add(_amountToBet);
+        return (tmpRewardPool.mul(100).div(tmpOption));
     }
 }
